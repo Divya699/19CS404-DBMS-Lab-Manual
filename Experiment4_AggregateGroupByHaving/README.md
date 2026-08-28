@@ -37,23 +37,71 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+```
+What is the total number of appointments scheduled by each doctor?
 
-```sql
--- Paste your SQL code below for Question 1
+Sample table:Appointments Table
+
+
+
+For example:
+
+Result
+DoctorID    TotalAppointments
+----------  -----------------
+1           1
+2           3
+5           3
+9           2
+10          1
+
+```
+```
+select 
+DoctorID,
+COUNT(DoctorID)  as TotalAppointments
+FROM 
+  Appointments 
+GROUP BY DoctorID;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="865" height="749" alt="AdobeExpressPhotos_e44d73db344f476da9f8d1b88b9144e9_CopyEdited" src="https://github.com/user-attachments/assets/6fa15f42-7768-4cdf-9db3-e776678ac187" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+```
+What is the total number of medications prescribed for each patient?
 
-```sql
--- Paste your SQL code below for Question 2
+Sample tablePrescriptions Table
+
+
+
+For example:
+
+Result
+PatientID   TotalMedications
+----------  ----------------
+1           1
+2           1
+3           1
+4           1
+5           1
+6           1
+7           1
+8           1
+9           1
+10          1
+
+
+```
+```
+select PatientID,
+COUNT(PatientID) as TotalMedications
+from Prescriptions 
+GROUP BY PatientID;
+
 ```
 
 **Output:**
@@ -61,10 +109,26 @@ HAVING condition;
 ![Output2](output.png)
 
 **Question 3**
----
--- Paste Question 3 here
+```
+How many appointments are scheduled for each doctor?
 
-```sql
+Sample table:Appointments Table
+
+
+
+For example:
+
+Result
+DoctorID    TotalAppointments
+----------  -----------------
+3           3
+4           2
+6           1
+7           3
+10          1
+
+
+```
 -- Paste your SQL code below for Question 3
 ```
 

@@ -129,7 +129,11 @@ DoctorID    TotalAppointments
 
 
 ```
--- Paste your SQL code below for Question 3
+```
+select DoctorID,
+count(DoctorID) as TotalAppointments
+from Appointments
+group by doctorID;
 ```
 
 **Output:**
@@ -137,11 +141,36 @@ DoctorID    TotalAppointments
 ![Output3](output.png)
 
 **Question 4**
----
--- Paste Question 4 here
+```
+Write a SQL query to find the maximum purchase amount.
 
-```sql
--- Paste your SQL code below for Question 4
+Sample table: orders
+
+ord_no      purch_amt   ord_date    customer_id  salesman_id
+
+----------  ----------  ----------  -----------  -----------
+
+70001       150.5       2012-10-05  3005         5002
+
+70009       270.65      2012-09-10  3001         5005
+
+70002       65.26       2012-10-05  3002         5001
+
+ 
+
+For example:
+
+Result
+MAXIMUM
+----------
+5760.0
+
+
+```
+```
+select MAX(purch_amt) as MAXIMUM
+from orders;
+
 ```
 
 **Output:**
@@ -149,11 +178,33 @@ DoctorID    TotalAppointments
 ![Output4](output.png)
 
 **Question 5**
----
--- Paste Question 5 here
+```
+Write a SQL query to find  how many employees work in California?
 
-```sql
--- Paste your SQL code below for Question 5
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
+ 
+
+For example:
+
+Result
+employees_in_california
+-----------------------
+2
+```
+
+```
+SELECT count (name) as employees_in_california 
+from employee
+where city ='California';
+
 ```
 
 **Output:**
@@ -161,11 +212,24 @@ DoctorID    TotalAppointments
 ![Output5](output.png)
 
 **Question 6**
----
--- Paste Question 6 here
+```
+Write a SQL query to return the total number of rows in the 'customer' table where the city is not Noida.
 
-```sql
--- Paste your SQL code below for Question 6
+Sample table: customer
+
+
+For example:
+
+Result
+COUNT
+----------
+9
+
+```
+```
+select COUNT(*) as COUNT
+from customer
+where city!='Noida';
 ```
 
 **Output:**
@@ -173,11 +237,35 @@ DoctorID    TotalAppointments
 ![Output6](output.png)
 
 **Question 7**
----
--- Paste Question 7 here
+```
+Write a SQL query to find the Fruit with the lowest available quantity.
 
-```sql
--- Paste your SQL code below for Question 7
+Note: Inventory attribute contains amount of fruits
+
+Table: fruits
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+unit        TEXT
+inventory   INTEGER
+price       REAL
+ 
+
+For example:
+
+Result
+fruit_name  lowest_quantity
+----------  ---------------
+Watermelon  15
+```
+
+```
+select name as fruit_name,inventory as lowest_quantity
+from fruits
+order by inventory ASC
+LIMIT 1;
 ```
 
 **Output:**
@@ -185,23 +273,116 @@ DoctorID    TotalAppointments
 ![Output7](output.png)
 
 **Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
 ```
+Write the SQL query that accomplishes the selection of total cost of all products in each category from the "products" table and includes only those products where the total cost is greater than 50.
+
+Sample table: products
+
+For example:
+
+Result
+category_id  Total_Cost
+-----------  ----------
+2            63
+
+```
+```
+select category_id,SUM (price) AS Total_Cost
+from products
+group by category_id
+HAVING sum(price)>50;
 
 **Output:**
 
 ![Output8](output.png)
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
+```
+
+fruit_name  lowest_quantity
+----------  ---------------
+Watermelon  15
+fruit_name  lowest_quantity
+----------  ---------------
+Watermelon  15
+fruit_name  lowest_quantity
+----------  ---------------
+Apple       5
+fruit_name  lowest_quantity
+----------  ---------------
+Apple       5
+Passed all tests!  
+
+Correct
+Marks for this submission: 1.00/1.00.
+Question 8
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+Write the SQL query that accomplishes the selection of total cost of all products in each category from the "products" table and includes only those products where the total cost is greater than 50.
+
+Sample table: products
+
+
+
+For example:
+
+Result
+category_id  Total_Cost
+-----------  ----------
+2            63
+Answer:(penalty regime: 0 %)
+group by category_id
+HAVING sum(price)>50;
+
+
+Feedback
+Expected	Got	
+category_id  Total_Cost
+-----------  ----------
+2            63
+category_id  Total_Cost
+-----------  ----------
+2            63
+category_id  Total_Cost
+-----------  ----------
+2            63
+4            70
+category_id  Total_Cost
+-----------  ----------
+2            63
+4            70
+Passed all tests!  
+
+Correct
+Marks for this submission: 1.00/1.00.
+Question 9
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+Write the SQL query that achieves the selection of product names and the maximum price for each category from the "products" table, and includes only those products where the maximum price is greater than 15.
+
+Sample table: products
+
+
+
+For example:
+
+Result
+category_id  product_name  Price
+-----------  ------------  ----------
+1            Orange        15.5
+2            Monitor       25
+
+```
+```
+select category_id,product_name,max(price) as Price
+from products
+group by category_id
+HAVING max(price)>15;
 ```
 
 **Output:**
@@ -209,11 +390,29 @@ DoctorID    TotalAppointments
 ![Output9](output.png)
 
 **Question 10**
----
--- Paste Question 10 here
+```
+Write the SQL query that achieves the selection of category and calculates the sum of the product of price and category ID as Revenue for each category from the "products" table, and includes only those products where the total revenue is greater than 25.
 
-```sql
--- Paste your SQL code below for Question 10
+Sample table: products
+
+
+
+For example:
+
+Result
+category_id  Revenue
+-----------  ----------
+1            49.5
+2            126
+3            79.44
+```
+
+```
+select category_id ,sum(price * category_id) as Revenue
+from products
+group by category_id
+HAVING sum(price*category_id)> 25;
+
 ```
 
 **Output:**

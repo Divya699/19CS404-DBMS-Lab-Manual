@@ -106,14 +106,14 @@ GROUP BY PatientID;
 
 **Output:**
 
-![Output2](output.png)
+<img width="1332" height="827" alt="image" src="https://github.com/user-attachments/assets/1e263eee-294e-4b97-a2f3-7497f24b5a10" />
+
 
 **Question 3**
 ```
 How many appointments are scheduled for each doctor?
 
 Sample table:Appointments Table
-
 
 
 For example:
@@ -138,7 +138,8 @@ group by doctorID;
 
 **Output:**
 
-![Output3](output.png)
+<img width="1333" height="856" alt="image" src="https://github.com/user-attachments/assets/a05a5fb3-552e-478a-aceb-b0a81fe9a6c2" />
+
 
 **Question 4**
 ```
@@ -156,8 +157,6 @@ ord_no      purch_amt   ord_date    customer_id  salesman_id
 
 70002       65.26       2012-10-05  3002         5001
 
- 
-
 For example:
 
 Result
@@ -165,8 +164,8 @@ MAXIMUM
 ----------
 5760.0
 
-
 ```
+
 ```
 select MAX(purch_amt) as MAXIMUM
 from orders;
@@ -175,7 +174,8 @@ from orders;
 
 **Output:**
 
-![Output4](output.png)
+<img width="1180" height="467" alt="image" src="https://github.com/user-attachments/assets/90c7da81-36fa-485c-a6b1-467f1c80483d" />
+
 
 **Question 5**
 ```
@@ -208,8 +208,8 @@ where city ='California';
 ```
 
 **Output:**
+<img width="1282" height="487" alt="image" src="https://github.com/user-attachments/assets/aca3e6e7-6e37-4d01-b46d-bbc860c6ab0b" />
 
-![Output5](output.png)
 
 **Question 6**
 ```
@@ -234,7 +234,8 @@ where city!='Noida';
 
 **Output:**
 
-![Output6](output.png)
+<img width="1226" height="477" alt="image" src="https://github.com/user-attachments/assets/6b583ac5-f52d-4182-a007-15260b139d70" />
+
 
 **Question 7**
 ```
@@ -270,7 +271,8 @@ LIMIT 1;
 
 **Output:**
 
-![Output7](output.png)
+<img width="1202" height="427" alt="image" src="https://github.com/user-attachments/assets/72fde112-7c74-43aa-aebf-66156b47e1da" />
+
 
 **Question 8**
 ```
@@ -291,84 +293,17 @@ select category_id,SUM (price) AS Total_Cost
 from products
 group by category_id
 HAVING sum(price)>50;
-
+```
 **Output:**
 
-![Output8](output.png)
+<img width="1167" height="480" alt="image" src="https://github.com/user-attachments/assets/e58af82e-2211-4418-8df6-a8aaf745a315" />
+
 
 **Question 9**
-
 ```
-
-fruit_name  lowest_quantity
-----------  ---------------
-Watermelon  15
-fruit_name  lowest_quantity
-----------  ---------------
-Watermelon  15
-fruit_name  lowest_quantity
-----------  ---------------
-Apple       5
-fruit_name  lowest_quantity
-----------  ---------------
-Apple       5
-Passed all tests!  
-
-Correct
-Marks for this submission: 1.00/1.00.
-Question 8
-Correct
-Mark 1.00 out of 1.00
-Flag question
-Question text
-Write the SQL query that accomplishes the selection of total cost of all products in each category from the "products" table and includes only those products where the total cost is greater than 50.
-
-Sample table: products
-
-
-
-For example:
-
-Result
-category_id  Total_Cost
------------  ----------
-2            63
-Answer:(penalty regime: 0 %)
-group by category_id
-HAVING sum(price)>50;
-
-
-Feedback
-Expected	Got	
-category_id  Total_Cost
------------  ----------
-2            63
-category_id  Total_Cost
------------  ----------
-2            63
-category_id  Total_Cost
------------  ----------
-2            63
-4            70
-category_id  Total_Cost
------------  ----------
-2            63
-4            70
-Passed all tests!  
-
-Correct
-Marks for this submission: 1.00/1.00.
-Question 9
-Correct
-Mark 1.00 out of 1.00
-Flag question
-Question text
 Write the SQL query that achieves the selection of product names and the maximum price for each category from the "products" table, and includes only those products where the maximum price is greater than 15.
 
 Sample table: products
-
-
-
 For example:
 
 Result
@@ -387,15 +322,13 @@ HAVING max(price)>15;
 
 **Output:**
 
-![Output9](output.png)
+<img width="1247" height="527" alt="image" src="https://github.com/user-attachments/assets/32ba1b1e-15a5-493a-86f9-6131f7b973df" />
 
 **Question 10**
 ```
 Write the SQL query that achieves the selection of category and calculates the sum of the product of price and category ID as Revenue for each category from the "products" table, and includes only those products where the total revenue is greater than 25.
 
 Sample table: products
-
-
 
 For example:
 
@@ -417,7 +350,8 @@ HAVING sum(price*category_id)> 25;
 
 **Output:**
 
-![Output10](output.png)
+<img width="1255" height="607" alt="image" src="https://github.com/user-attachments/assets/60ef0093-3dd4-41fd-8b8c-27855f3caee1" />
+
 
 
 ## RESULT
